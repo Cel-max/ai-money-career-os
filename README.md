@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Money & Career OS — Version commerciale</title>
+<style>
+:root{--bg:#f6f7fb;--surface:#fff;--surface2:#f0f1f7;--ink:#101828;--muted:#667085;--line:#e4e7ec;--brand:#635bff;--brand2:#8b5cf6;--dark:#101828;--green:#039855;--amber:#dc6803;--red:#d92d20;--shadow:0 18px 50px rgba(16,24,40,.09);--r:18px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.btn{border:0;border-radius:11px;padding:11px 16px;font-weight:750;transition:.18s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--brand);color:white;box-shadow:0 7px 18px rgba(99,91,255,.25)}.dark{background:var(--dark);color:white}.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}.soft{background:#eeecff;color:#4f46e5}.danger{background:#fee4e2;color:#b42318}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 10px;background:var(--surface2);font-size:12px;font-weight:750}.app{min-height:100vh}.topbar{height:68px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:20}.brand{font-size:18px;font-weight:900;letter-spacing:-.03em}.brand b{color:var(--brand)}.top-actions{display:flex;gap:9px;align-items:center}.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#ede9fe;color:#5b21b6;font-weight:800}.layout{display:flex}.sidebar{width:250px;position:fixed;top:68px;bottom:0;background:#111827;color:#d0d5dd;padding:18px 13px;z-index:10;overflow-y:auto}.side-section{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#98a2b3;padding:13px 11px 6px}.nav{width:100%;border:0;background:transparent;color:#d0d5dd;text-align:left;padding:10px 11px;border-radius:10px;margin:2px 0;font-weight:650}.nav.active,.nav:hover{background:#1d2939;color:#fff}.content{margin-left:250px;width:calc(100% - 250px);padding:34px;max-width:1500px}.view{display:none}.view.active{display:block}.hero{background:linear-gradient(120deg,#101828,#25204b 62%,#4c1d95);color:white;border-radius:24px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-100px;top:-180px;background:rgba(255,255,255,.08)}.hero h1{font-size:40px;line-height:1.08;letter-spacing:-.045em;margin:8px 0 12px;max-width:760px;position:relative;z-index:1}.hero p{color:#d0d5dd;max-width:690px;font-size:17px;position:relative;z-index:1}.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:#c4b5fd;position:relative;z-index:1}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;position:relative;z-index:1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 5px 20px rgba(16,24,40,.035)}.stat .num{font-size:28px;font-weight:900;letter-spacing:-.04em}.muted{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.35fr .9fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:30px 0 12px}.section-head h2{margin:0;font-size:22px;letter-spacing:-.025em}.section-head p{margin:3px 0 0}.progress{height:8px;background:#eaecf0;border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));border-radius:99px}.task{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}.task:last-child{border-bottom:0}.check{width:24px;height:24px;border-radius:7px;border:1.5px solid #98a2b3;background:#fff;display:grid;place-items:center;flex:none;cursor:pointer;transition:.2s}.check:hover{border-color:var(--brand)}.check.done{background:var(--green);border-color:var(--green);color:#fff}.task strong{display:block}.task small{color:var(--muted)}.score{display:flex;gap:20px;align-items:center}.ring{width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--brand) 0 72%,#eaecf0 72% 100%);position:relative;flex-shrink:0}.ring:after{content:"";position:absolute;inset:10px;border-radius:50%;background:white}.ring span{position:relative;z-index:1;font-size:28px;font-weight:900}.feature{padding:18px;border:1px solid var(--line);border-radius:15px}.feature h3{margin:4px 0}.icon{width:38px;height:38px;border-radius:11px;background:#eeecff;color:#5b21b6;display:grid;place-items:center;font-weight:900;flex-shrink:0}.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.price{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--surface)}.price.pop{border:2px solid var(--brand);box-shadow:0 15px 45px rgba(99,91,255,.16)}.price .tag{position:absolute;right:16px;top:16px;background:#eeecff;color:#4f46e5;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:900}.price h3{font-size:20px;margin:0 0 5px}.price .amount{font-size:37px;font-weight:900;letter-spacing:-.04em;margin:12px 0}.price ul{padding-left:18px;min-height:150px}.price li{margin:8px 0}.landing{background:linear-gradient(#fff 0,#f7f5ff 100%);min-height:calc(100vh - 68px);margin:-34px;padding:0 7vw 70px}.landnav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}.landhero{text-align:center;padding:75px 0 50px}.landhero h1{font-size:58px;line-height:1.02;letter-spacing:-.055em;max-width:900px;margin:14px auto}.landhero p{font-size:19px;color:var(--muted);max-width:690px;margin:0 auto}.landhero .hero-actions{justify-content:center}.trust{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}.landing .grid3{max-width:1050px;margin:30px auto}.demo{max-width:1050px;margin:60px auto}.demo-box{background:#101828;border-radius:24px;padding:28px;color:#fff}.demo-box .mini{background:#1d2939;border-radius:14px;padding:17px;margin-top:12px}.form{max-width:760px}.label{display:block;font-weight:750;margin:15px 0 6px}.input{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:white;outline:none;font-family:inherit}.input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #eeecff}.choicegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.choice{padding:14px;border:1px solid var(--line);border-radius:12px;background:white;text-align:left;cursor:pointer;transition:.2s}.choice:hover{border-color:var(--brand)}.choice.selected{border:2px solid var(--brand);background:#f6f5ff}.stepbar{display:flex;gap:6px;margin-bottom:24px}.stepbar i{height:5px;border-radius:99px;background:#eaecf0;flex:1}.stepbar i.on{background:var(--brand)}.modal{position:fixed;inset:0;background:rgba(16,24,40,.55);display:grid;place-items:center;z-index:100;padding:20px;backdrop-filter:blur(2px)}.modalbox{background:white;border-radius:20px;max-width:560px;width:100%;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.25)}.toast{position:fixed;right:22px;bottom:22px;background:#101828;color:white;padding:13px 16px;border-radius:11px;z-index:200;box-shadow:var(--shadow);animation:slideIn .3s ease-out}.toast.hidden{animation:slideOut .3s ease-in;pointer-events:none}@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes slideOut{from{transform:translateX(0);opacity:1}to{transform:translateX(400px);opacity:0}}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}.locked{opacity:.68}.locknote{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#f8f7ff;border:1px dashed #a69df7;padding:14px;border-radius:13px}.footer{color:var(--muted);text-align:center;padding:45px 0}.mobile{display:none}@media(max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}.grid2,.pricing{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.hero h1{font-size:34px}}@media(max-width:760px){.sidebar{width:100%;position:fixed;left:0;top:68px;bottom:0;max-height:calc(100vh - 68px);transform:translateX(-100%);transition:.3s;box-shadow:-2px 0 10px rgba(0,0,0,.1)}.sidebar.open{transform:translateX(0)}.content{margin-left:0;width:100%;padding:18px}.mobile{display:block}.topbar{padding:0 15px}.stats,.grid3{grid-template-columns:1fr}.landhero h1{font-size:42px}.landing{margin:-18px;padding:0 20px 50px}.landnav{padding-top:18px}.choicegrid{grid-template-columns:1fr}.hero{padding:25px}.hero h1{font-size:31px}.score{flex-direction:column;align-items:flex-start}.top-actions .ghost{display:none}.pricing{grid-template-columns:1fr}.price{padding:16px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+<div class="brand">AI <b>Money</b> & Career OS</div>
+<div class="top-actions">
+<button class="btn ghost" onclick="showView('pricing')">Passer Pro</button>
+<div class="avatar" title="Profil utilisateur">JD</div>
+</div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+<div class="side-section">Workspace</div>
+<button class="nav active" onclick="showView('home',this)">⌂ Tableau de bord</button>
+<button class="nav" onclick="showView('missions',this)">✓ Mes missions</button>
+<button class="nav" onclick="showView('skills',this)">✦ Compétences IA</button>
+<button class="nav" onclick="showView('workflows',this)">⚡ Workflows</button>
+<button class="nav" onclick="showView('opportunities',this)">◈ Opportunités</button>
+<button class="nav" onclick="showView('offer',this)">◇ Offer Builder</button>
+<button class="nav" onclick="showView('career',this)">◎ Career Builder</button>
+<div class="side-section">Compte</div>
+<button class="nav" onclick="showView('profile',this)">⚙ Mon profil</button>
+<button class="nav" onclick="showView('pricing',this)">★ Abonnement</button>
+<div style="position:absolute;bottom:18px;left:13px;right:13px">
+<div class="card" style="background:#1d2939;border:0;color:#fff">
+<small style="color:#98a2b3">Votre progression</small>
+<div style="font-weight:900;margin:5px 0 8px">12 / 30 jours</div>
+<div class="progress"><i style="width:40%"></i></div>
+<button class="btn soft" style="width:100%;margin-top:12px" onclick="showView('pricing')">Débloquer Pro</button>
+</div>
+</div>
+</aside>
+<main class="content">
+<section id="home" class="view active">
+<div class="hero">
+<span class="eyebrow">Votre système personnel</span>
+<h1>Transformez vos compétences en opportunités avec l'IA.</h1>
+<p>Un parcours personnalisé qui vous dit quoi apprendre, quoi créer et quoi faire aujourd'hui pour augmenter votre valeur professionnelle.</p>
+<div class="hero-actions">
+<button class="btn primary" onclick="showView('missions')">Continuer ma mission</button>
+<button class="btn" style="background:#fff;color:#101828" onclick="startDiagnostic()">Refaire mon diagnostic</button>
+</div>
+</div>
+<div class="stats">
+<div class="card stat">
+<div class="muted">AI Opportunity Score</div>
+<div class="num">72<span style="font-size:16px">/100</span></div>
+<span class="pill" style="color:#067647">+8 ce mois</span>
+</div>
+<div class="card stat">
+<div class="muted">Missions terminées</div>
+<div class="num">12</div>
+<span class="muted">sur 30 jours</span>
+</div>
+<div class="card stat">
+<div class="muted">Compétences</div>
+<div class="num">7</div>
+<span class="muted">acquises</span>
+</div>
+<div class="card stat">
+<div class="muted">Temps gagné</div>
+<div class="num">4h20</div>
+<span class="muted">cette semaine</span>
+</div>
+</div>
+<div class="grid2">
+<div class="card">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Aujourd'hui</h2>
+<p class="muted">Une priorité. 25 minutes.</p>
+</div>
+<span class="pill">Jour 13</span>
+</div>
+<div class="task">
+<button class="check" onclick="toggleTask(this)"></button>
+<div>
+<strong>Construire votre première offre IA</strong>
+<small>Choisissez une compétence que vous maîtrisez et transformez-la en résultat vendable.</small>
+<div style="margin-top:10px"><button class="btn soft" onclick="showView('offer')">Commencer</button></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Votre score</h2>
+<p class="muted">Potentiel actuel</p>
+</div>
+</div>
+<div class="score">
+<div class="ring"><span>72</span></div>
+<div>
+<strong>Bon potentiel</strong>
+<p class="muted">Vous avez déjà les bases. Votre priorité : transformer vos compétences en offre claire.</p>
+<button class="btn ghost" onclick="showView('opportunities')">Voir les opportunités</button>
+</div>
+</div>
+</div>
+</div>
+<div class="section-head">
+<div>
+<h2>Votre parcours</h2>
+<p class="muted">90 jours pour passer de compétence à opportunité.</p>
+</div>
+<button class="btn ghost" onclick="showView('missions')">Voir tout</button>
+</div>
+<div class="grid3">
+<div class="card feature">
+<div class="icon">01</div>
+<h3>Fondations</h3>
+<p class="muted">Comprendre où l'IA crée réellement de la valeur pour vous.</p>
+<div class="progress"><i style="width:100%"></i></div>
+<small>Terminé</small>
+</div>
+<div class="card feature">
+<div class="icon">02</div>
+<h3>Création de valeur</h3>
+<p class="muted">Créer des workflows et une offre qui résout un vrai problème.</p>
+<div class="progress"><i style="width:58%"></i></div>
+<small>58%</small>
+</div>
+<div class="card feature">
+<div class="icon">03</div>
+<h3>Monétisation</h3>
+<p class="muted">Trouver des opportunités et passer à l'action.</p>
+<div class="progress"><i style="width:12%"></i></div>
+<small>12%</small>
+</div>
+</div>
+</section>
+
+<section id="missions" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Mes missions</h2>
+<p class="muted">Le plan vous donne une action prioritaire à la fois.</p>
+</div>
+<span class="pill">12/30</span>
+</div>
+<div class="card">
+<div class="progress"><i style="width:40%"></i></div>
+<div class="task">
+<button class="check done">✓</button>
+<div>
+<strong>Identifier vos 3 compétences les plus monétisables</strong>
+<small>15 min · Fondation</small>
+</div>
+</div>
+<div class="task">
+<button class="check done">✓</button>
+<div>
+<strong>Créer votre bibliothèque de 5 workflows</strong>
+<small>25 min · Création de valeur</small>
+</div>
+</div>
+<div class="task">
+<button class="check" onclick="toggleTask(this)"></button>
+<div>
+<strong>Construire votre première offre IA</strong>
+<small>25 min · Création de valeur</small>
+<div style="margin-top:9px"><button class="btn primary" onclick="showView('offer')">Faire la mission</button></div>
+</div>
+</div>
+<div class="task">
+<button class="check" onclick="toggleTask(this)"></button>
+<div>
+<strong>Identifier 10 prospects ou opportunités</strong>
+<small>20 min · Monétisation</small>
+</div>
+</div>
+<div class="task">
+<button class="check" onclick="toggleTask(this)"></button>
+<div>
+<strong>Envoyer votre première proposition personnalisée</strong>
+<small>20 min · Monétisation</small>
+</div>
+</div>
+</div>
+<div class="locknote" style="margin-top:15px">
+<div>
+<strong>Les jours 31 à 90 sont prêts dans Pro.</strong>
+<div class="muted">Accédez aux parcours avancés, aux missions adaptatives et aux outils de monétisation.</div>
+</div>
+<button class="btn primary" onclick="showView('pricing')">Débloquer</button>
+</div>
+</section>
+
+<section id="skills" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Compétences IA</h2>
+<p class="muted">Apprenez uniquement ce qui sert votre objectif.</p>
+</div>
+</div>
+<div class="grid3">
+<div class="card feature">
+<div class="icon">R</div>
+<h3>Recherche augmentée</h3>
+<p class="muted">Transformer une question floue en analyse exploitable.</p>
+<span class="pill">Maîtrisé</span>
+</div>
+<div class="card feature">
+<div class="icon">A</div>
+<h3>Analyse & synthèse</h3>
+<p class="muted">Extraire les décisions importantes d'un volume d'information.</p>
+<span class="pill">En cours</span>
+</div>
+<div class="card feature">
+<div class="icon">C</div>
+<h3>Création de contenu</h3>
+<p class="muted">Créer plus vite sans perdre votre voix.</p>
+<span class="pill">En cours</span>
+</div>
+<div class="card feature">
+<div class="icon">V</div>
+<h3>Vente assistée par IA</h3>
+<p class="muted">Préparer, personnaliser et suivre vos prises de contact.</p>
+<span class="pill">À apprendre</span>
+</div>
+<div class="card feature">
+<div class="icon">M</div>
+<h3>Automatisation</h3>
+<p class="muted">Repérer les tâches répétitives et concevoir des systèmes.</p>
+<span class="pill">À apprendre</span>
+</div>
+<div class="card feature">
+<div class="icon">P</div>
+<h3>Prompting contextuel</h3>
+<p class="muted">Donner contexte, contraintes et critères à l'IA.</p>
+<span class="pill">Maîtrisé</span>
+</div>
+</div>
+</section>
+
+<section id="workflows" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>AI Workflows</h2>
+<p class="muted">Des procédures, pas une pile de prompts.</p>
+</div>
+<button class="btn primary" onclick="showToast('Workflow ajouté à votre bibliothèque')">+ Ajouter</button>
+</div>
+<div class="grid3">
+<div class="card feature">
+<div class="icon">01</div>
+<h3>Compétence → offre</h3>
+<p class="muted">Transformez une compétence en service concret, cible et promesse.</p>
+<button class="btn soft" onclick="openWorkflow('Compétence → offre')">Lancer</button>
+</div>
+<div class="card feature">
+<div class="icon">02</div>
+<h3>Analyse marché</h3>
+<p class="muted">Structurer un marché, ses besoins, concurrents et angles.</p>
+<button class="btn soft" onclick="openWorkflow('Analyse marché')">Lancer</button>
+</div>
+<div class="card feature">
+<div class="icon">03</div>
+<h3>Prospection personnalisée</h3>
+<p class="muted">Passer d'une liste de prospects à des messages pertinents.</p>
+<button class="btn soft" onclick="openWorkflow('Prospection personnalisée')">Lancer</button>
+</div>
+<div class="card feature">
+<div class="icon">04</div>
+<h3>Contenu → clients</h3>
+<p class="muted">Transformer une expertise en contenu qui attire une audience précise.</p>
+<button class="btn soft" onclick="openWorkflow('Contenu → clients')">Lancer</button>
+</div>
+<div class="card feature">
+<div class="icon">05</div>
+<h3>Préparation entretien</h3>
+<p class="muted">Adapter votre discours au poste et simuler les questions.</p>
+<button class="btn soft" onclick="openWorkflow('Préparation entretien')">Lancer</button>
+</div>
+<div class="card feature locked">
+<div class="icon">06</div>
+<h3>Automatisation avancée 🔒</h3>
+<p class="muted">Chaînes multi-étapes et systèmes personnalisés.</p>
+<button class="btn ghost" onclick="showView('pricing')">Pro</button>
+</div>
+</div>
+</section>
+
+<section id="opportunities" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Opportunity Finder</h2>
+<p class="muted">Les pistes qui correspondent à votre profil.</p>
+</div>
+</div>
+<div class="card">
+<h3>3 opportunités prioritaires</h3>
+<div class="task">
+<div class="icon">A</div>
+<div>
+<strong>Assistant marketing augmenté par IA</strong>
+<small>Bon fit · démarrage rapide · demande fréquente</small>
+<div style="margin-top:7px"><span class="pill">Compétences : contenu · analyse</span> <span class="pill">Difficulté : ★★☆☆☆</span></div>
+</div>
+</div>
+<div class="task">
+<div class="icon">F</div>
+<div>
+<strong>Freelance création de contenu spécialisé</strong>
+<small>Très bon fit · nécessite une niche claire</small>
+<div style="margin-top:7px"><span class="pill">Compétences : rédaction · IA</span> <span class="pill">Difficulté : ★★★☆☆</span></div>
+</div>
+</div>
+<div class="task">
+<div class="icon">C</div>
+<div>
+<strong>Automatisation de tâches administratives</strong>
+<small>Bon potentiel · montée en compétence nécessaire</small>
+<div style="margin-top:7px"><span class="pill">Compétences : process · no-code</span> <span class="pill">Difficulté : ★★★★☆</span></div>
+</div>
+</div>
+</div>
+<div class="locknote" style="margin-top:15px">
+<div>
+<strong>Pro débloque 20 opportunités personnalisées.</strong>
+<div class="muted">Avec critères, plan de démarrage et compétences manquantes.</div>
+</div>
+<button class="btn primary" onclick="showView('pricing')">Débloquer</button>
+</div>
+</section>
+
+<section id="offer" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Offer Builder</h2>
+<p class="muted">Transformez une compétence en offre claire.</p>
+</div>
+</div>
+<div class="grid2">
+<div class="card form">
+<label class="label">Votre compétence</label>
+<input id="skillInput" class="input" placeholder="Ex. rédaction, vente, design, Excel…">
+<label class="label">Votre client cible</label>
+<input id="clientInput" class="input" placeholder="Ex. petites entreprises locales">
+<label class="label">Problème que vous pouvez résoudre</label>
+<textarea id="problemInput" class="input" rows="4" placeholder="Décrivez le résultat que vous pouvez aider à obtenir."></textarea>
+<button class="btn primary" style="margin-top:15px" onclick="buildOffer()">Générer mon offre</button>
+</div>
+<div class="card" id="offerResult">
+<div class="icon">✦</div>
+<h3>Votre offre apparaîtra ici</h3>
+<p class="muted">Remplissez les 3 champs. Le système vous propose un positionnement, une promesse et une structure de service.</p>
+</div>
+</div>
+</section>
+
+<section id="career" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Career Builder</h2>
+<p class="muted">Votre copilote pour les candidatures et entretiens.</p>
+</div>
+</div>
+<div class="grid3">
+<div class="card feature">
+<div class="icon">CV</div>
+<h3>CV ciblé</h3>
+<p class="muted">Adaptez votre CV à une offre sans inventer d'expérience.</p>
+<button class="btn soft" onclick="showToast('Analyse CV disponible dans Pro')">Analyser</button>
+</div>
+<div class="card feature">
+<div class="icon">IN</div>
+<h3>Profil professionnel</h3>
+<p class="muted">Clarifiez votre positionnement et votre valeur.</p>
+<button class="btn soft" onclick="showToast('Profil optimisé : module ouvert')">Optimiser</button>
+</div>
+<div class="card feature">
+<div class="icon">?</div>
+<h3>Simulation d'entretien</h3>
+<p class="muted">Pratiquez vos réponses avec un recruteur simulé.</p>
+<button class="btn soft" onclick="showToast('Simulation avancée disponible dans Pro')">Simuler</button>
+</div>
+</div>
+</section>
+
+<section id="profile" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Mon profil</h2>
+<p class="muted">Votre diagnostic pilote les recommandations.</p>
+</div>
+<button class="btn primary" onclick="showToast('Profil enregistré')">Enregistrer</button>
+</div>
+<div class="card form">
+<label class="label">Situation</label>
+<select class="input">
+<option>Salarié(e)</option>
+<option>Freelance</option>
+<option>Entrepreneur</option>
+<option>Étudiant(e)</option>
+<option>En recherche d'emploi</option>
+</select>
+<label class="label">Objectif principal</label>
+<select class="input">
+<option>Augmenter ma valeur professionnelle</option>
+<option>Trouver un emploi</option>
+<option>Créer une activité complémentaire</option>
+<option>Développer mon activité freelance</option>
+</select>
+<label class="label">Temps disponible / semaine</label>
+<select class="input">
+<option>1–2 heures</option>
+<option>3–5 heures</option>
+<option>5–10 heures</option>
+<option>10+ heures</option>
+</select>
+<label class="label">Votre niveau IA</label>
+<select class="input">
+<option>Débutant</option>
+<option>Intermédiaire</option>
+<option>Avancé</option>
+</select>
+</div>
+</section>
+
+<section id="pricing" class="view">
+<div class="section-head" style="margin-top:0">
+<div>
+<h2>Choisissez votre niveau</h2>
+<p class="muted">Commencez gratuitement. Passez Pro quand vous voulez aller plus vite.</p>
+</div>
+</div>
+<div class="pricing">
+<div class="card price">
+<h3>Free</h3>
+<p class="muted">Pour découvrir votre potentiel.</p>
+<div class="amount">0€</div>
+<ul>
+<li>Diagnostic initial</li>
+<li>AI Opportunity Score</li>
+<li>7 missions</li>
+<li>5 workflows</li>
+<li>3 opportunités</li>
+</ul>
+<button class="btn ghost" style="width:100%" onclick="showToast('Vous êtes déjà sur Free')">Votre formule</button>
+</div>
+<div class="card price pop">
+<span class="tag">RECOMMANDÉ</span>
+<h3>Pro</h3>
+<p class="muted">Pour passer à l'action.</p>
+<div class="amount">19€<small style="font-size:14px">/mois</small></div>
+<ul>
+<li>Parcours 90 jours</li>
+<li>100+ workflows</li>
+<li>Opportunity Finder complet</li>
+<li>Offer & Career Builder</li>
+<li>Missions adaptatives</li>
+<li>Suivi de progression</li>
+</ul>
+<button class="btn primary" style="width:100%" onclick="checkout('Pro')">Passer Pro</button>
+</div>
+<div class="card price">
+<h3>Premium</h3>
+<p class="muted">Pour un accompagnement renforcé.</p>
+<div class="amount">49€<small style="font-size:14px">/mois</small></div>
+<ul>
+<li>Tout Pro</li>
+<li>Workflows avancés</li>
+<li>Revue stratégique guidée</li>
+<li>Plans personnalisés avancés</li>
+<li>Nouveaux modules prioritaires</li>
+</ul>
+<button class="btn dark" style="width:100%" onclick="checkout('Premium')">Choisir Premium</button>
+</div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>Pourquoi payer ?</h3>
+<p class="muted">La valeur n'est pas dans une liste de prompts. Elle est dans la personnalisation, le parcours, les outils et surtout la transformation d'une intention en actions concrètes.</p>
+</div>
+</section>
+</main>
+</div>
+</div>
+
+<div id="modal" class="modal hidden">
+<div class="modalbox">
+<div id="modalBody"></div>
+<div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">
+<button class="btn ghost" onclick="closeModal()">Fermer</button>
+<button class="btn primary" id="modalAction">Continuer</button>
+</div>
+</div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+
+function showView(id, el) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  $('#' + id).classList.add('active');
+  document.querySelectorAll('.nav').forEach(n => n.classList.remove('active'));
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(msg) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.remove('hidden');
+  clearTimeout(window.tt);
+  window.tt = setTimeout(() => t.classList.add('hidden'), 2600);
+}
+
+function toggleTask(b) {
+  b.classList.toggle('done');
+  b.textContent = b.classList.contains('done') ? '✓' : '';
+  showToast(b.classList.contains('done') ? 'Mission terminée 🎉' : 'Mission réouverte');
+}
+
+function startDiagnostic() {
+  showView('profile');
+  showToast('Votre diagnostic est prêt : complétez votre profil pour recalculer le score.');
+}
+
+function openWorkflow(name) {
+  $('#modalBody').innerHTML = `
+    <span class="pill">Workflow IA</span>
+    <h2>${name}</h2>
+    <p class="muted">Ce workflow vous guide étape par étape. Décrivez votre contexte, votre objectif et votre contrainte principale.</p>
+    <label class="label">Votre contexte</label>
+    <textarea class="input" rows="4" placeholder="Ex. Je suis commercial et je veux prospecter des PME…"></textarea>
+  `;
+  $('#modalAction').onclick = () => {
+    closeModal();
+    showToast('Workflow lancé — étape 1 terminée');
+  };
+  $('#modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  $('#modal').classList.add('hidden');
+}
+
+function buildOffer() {
+  const s = $('#skillInput').value || 'votre compétence';
+  const c = $('#clientInput').value || 'votre cible';
+  const p = $('#problemInput').value || 'un problème concret';
+  
+  $('#offerResult').innerHTML = `
+    <span class="pill">Offre générée</span>
+    <h3>${s} pour ${c}</h3>
+    <p><strong>Promesse :</strong> Aider ${c} à résoudre ${p.toLowerCase()} grâce à une méthode assistée par IA, avec un résultat clair et mesurable.</p>
+    <div class="feature">
+      <strong>Structure</strong>
+      <p class="muted">1. Diagnostic · 2. Mise en place · 3. Production · 4. Optimisation · 5. Suivi</p>
+    </div>
+    <div style="margin-top:12px">
+      <span class="pill">Positionnement clair</span> 
+      <span class="pill">Résultat concret</span>
+    </div>
+  `;
+  showToast('Offre générée avec succès !');
+}
+
+function checkout(plan) {
+  $('#modalBody').innerHTML = `
+    <span class="pill">Formule ${plan}</span>
+    <h2>Prêt à passer à l'action ?</h2>
+    <p class="muted">Dans une version connectée à Stripe, ce bouton ouvrirait le paiement sécurisé. Ici, nous simulons le parcours de conversion.</p>
+    <div class="feature">
+      <strong>${plan}</strong>
+      <p class="muted">Accès immédiat au parcours et aux fonctionnalités premium.</p>
+    </div>
+  `;
+  $('#modalAction').textContent = 'Simuler le paiement';
+  $('#modalAction').onclick = () => {
+    closeModal();
+    showToast('Paiement simulé — bienvenue dans ' + plan + ' 🚀');
+  };
+  $('#modal').classList.remove('hidden');
+}
+
+function init() {
+  const path = location.hash.replace('#', '');
+  if (path && document.getElementById(path)) {
+    showView(path);
+  }
+}
+
+init();
+
+document.addEventListener('click', (e) => {
+  if (e.target.id === 'modal') {
+    closeModal();
+  }
+});
+</script>
+</body>
+</html>
+

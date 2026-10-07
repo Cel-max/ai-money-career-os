@@ -1,0 +1,45 @@
+# AI Money & Career OS
+
+**Plateforme personnalisée pour transformer vos compétences en opportunités avec l'IA.**
+
+Un parcours structuré en 90 jours qui vous dit quoi apprendre, quoi créer et quoi faire aujourd'hui pour augmenter votre valeur professionnelle.
+
+## 🚀 Fonctionnalités
+
+- Tableau de bord et score d'opportunité
+- Missions guidées
+- Compétences IA
+- Workflows
+- Opportunity Finder
+- Offer Builder
+- Career Builder
+- Profil utilisateur
+- Pricing responsive
+
+## 🚀 Déploiement GitHub Pages
+
+Le site est prêt à être publié sur GitHub Pages.
+
+1. Dans le dépôt GitHub, allez dans `Settings` > `Pages`.
+2. Sélectionnez la branche `main` et le dossier `/root`.
+3. Enregistrez.
+4. L'URL sera : `https://cel-max.github.io/ai-money-career-os/`
+
+## 📁 Fichiers
+
+- `index.html` : page principale du site
+
+## ✨ Stack
+
+- HTML5
+- CSS3
+- JavaScript vanilla
+
+## 📝 Note
+
+Le site est statique et prêt à être déployé avec GitHub Pages sans dépendances externes.
+
+---
+
+**Transformez vos compétences en opportunités avec l'IA.**
+
